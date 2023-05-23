@@ -55,11 +55,19 @@ just looking at the output of the program.
 When you're done with refactoring, test the quality of your refactoring by
 implementing two additional scenarios (methods) in `SmartHomeController`:
 
-1. Add the `make_quick_breakfast` scenario to raise the blinds and make a
+1. Add the `make_quick_breakfast` scenario to open the blinds and make a
    predefined coffee type.
+   1. Add `Blinds` device class with `open` and `close` methods
+      (blinds are always powered and does not have on/off function).
+   1. Add `make_quick_breakfast` method to `SmartHomeController`.
 
-1. Add automatic vacuum cleaner and the `start_night_cleaning` scenario, which
+1. Add automatic vacuum cleaner and the `schedule_night_cleaning` scenario, which
    should start the cleaning once everything else is turned off.
+   1. Add `VacuumCleaner` device class with `start_cleaning` and `stop_cleaning`
+      methods.
+   1. Add `schedule_night_cleaning` method to `SmartHomeController`. After
+      calling this method, the vacuum cleaner should start cleaning once all
+      other devices are turned off.
 
 Evaluate whether or not your refactoring made life easier for you, or not.
 
