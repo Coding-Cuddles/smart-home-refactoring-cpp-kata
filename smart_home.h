@@ -1,6 +1,5 @@
 #pragma once
 
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -33,9 +32,9 @@ struct AirConditioner {
     std::string turn_on() { return "AC turned on"; }
     std::string turn_off() { return "AC turned off"; }
 
-    std::string set_temperature(int temperature_in_celcius)
+    std::string set_temperature(int temperature_in_celsius)
     {
-        return "Set temperature to " + std::to_string(temperature_in_celcius);
+        return "Set temperature to " + std::to_string(temperature_in_celsius);
     }
 };
 

@@ -1,7 +1,7 @@
 # Smart Home Refactoring C++ Kata
 
 [![CI](https://github.com/Coding-Cuddles/smart-home-refactoring-cpp-kata/actions/workflows/main.yml/badge.svg)](https://github.com/Coding-Cuddles/smart-home-refactoring-cpp-kata/actions/workflows/main.yml)
-[![Replit](https://replit.com/badge?caption=Try%20with%20Replit&variant=small)](https://replit.com/new/github/Coding-Cuddles/smart-home-refactoring-cpp-kata)
+[![Replit](https://img.shields.io/badge/Try%20with%20Replit-black?logo=replit)](https://replit.com/new/github/Coding-Cuddles/smart-home-refactoring-cpp-kata)
 
 ## Overview
 
