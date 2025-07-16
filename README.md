@@ -1,7 +1,6 @@
 # Smart Home Refactoring C++ Kata
 
 [![CI](https://github.com/Coding-Cuddles/smart-home-refactoring-cpp-kata/actions/workflows/main.yml/badge.svg)](https://github.com/Coding-Cuddles/smart-home-refactoring-cpp-kata/actions/workflows/main.yml)
-[![Replit](https://img.shields.io/badge/Try%20with%20Replit-black?logo=replit)](https://replit.com/new/github/Coding-Cuddles/smart-home-refactoring-cpp-kata)
 
 ## Overview
 
@@ -9,7 +8,7 @@ This kata complements [Clean Code: SOLID, Ep. 13 - Dependency Inversion Principl
 
 In this exercise, you'll practice refactoring code to adhere to the Dependency
 Inversion Principle (DIP). You'll be working with a smart home system that
-controls different types of lights and an air conditioner.
+controls different types of lights and air conditioner.
 
 ## Instructions
 
@@ -40,7 +39,7 @@ Here are some guidelines to follow:
 1. Modify any constructors or method calls as necessary to accommodate the
    refactoring.
 
-> **Note**
+> [!NOTE]
 >
 > Remember that in this exercise, we assume all devices are in an ideal state
 > and don't account for error cases such as a network connection failure or an
@@ -58,7 +57,7 @@ implementing two additional scenarios (methods) in `SmartHomeController`:
 1. Add the `make_quick_breakfast` scenario to open the blinds and make a
    predefined coffee type.
    1. Add `Blinds` device class with `open` and `close` methods
-      (blinds are always powered and does not have on/off function).
+      (blinds are always powered and does not have an on/off function).
    1. Add `make_quick_breakfast` method to `SmartHomeController`.
 
 1. Add automatic vacuum cleaner and the `schedule_night_cleaning` scenario, which
@@ -69,29 +68,20 @@ implementing two additional scenarios (methods) in `SmartHomeController`:
       calling this method, the vacuum cleaner should start cleaning once all
       other devices are turned off.
 
-Evaluate whether or not your refactoring made life easier for you, or not.
+Evaluate whether your refactoring made life easier for you or not.
+
+## Prerequisites
+
+- A compatible C++ compiler that supports at least C++17
+- [CMake](https://cmake.org)
+- [GoogleTest](https://github.com/google/googletest)
 
 ## Usage
-
-You can import this project into [Replit](https://replit.com), and it will
-handle all dependencies automatically.
-
-### Prerequisites
-
-* [CMake 3.19+](https://cmake.org)
-* [Ninja](https://ninja-build.org)
-* [GTest](https://github.com/google/googletest)
 
 ### Build
 
 ```console
-make
-```
-
-### Run main
-
-```console
-make run
+make build
 ```
 
 ### Run tests
