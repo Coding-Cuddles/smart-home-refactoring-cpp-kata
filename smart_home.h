@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <string>
 #include <vector>
 
@@ -49,34 +50,42 @@ struct CoffeeMaker {
 };
 
 struct SmartHomeController {
+    SmartHomeController()
+        : switchable_light_1(std::make_unique<SwitchableLight>()),
+          switchable_light_2(std::make_unique<SwitchableLight>()),
+          networkable_light(std::make_unique<NetworkableLight>()),
+          dimmable_light(std::make_unique<DimmableLight>()),
+          coffee_maker(std::make_unique<CoffeeMaker>()),
+          ac(std::make_unique<AirConditioner>()) {}
+
     std::vector<std::string> turn_on_all()
     {
         return {
-            switchable_light_1.turn_on(),
-            switchable_light_2.turn_on(),
-            networkable_light.turn_on(),
-            dimmable_light.turn_on(),
-            coffee_maker.turn_on(),
-            ac.turn_on(),
+            switchable_light_1->turn_on(),
+            switchable_light_2->turn_on(),
+            networkable_light->turn_on(),
+            dimmable_light->turn_on(),
+            coffee_maker->turn_on(),
+            ac->turn_on(),
         };
     }
 
     std::vector<std::string> turn_off_all()
     {
         return {
-            switchable_light_1.turn_off(),
-            switchable_light_2.turn_off(),
-            networkable_light.turn_off(),
-            dimmable_light.turn_off(),
-            coffee_maker.turn_off(),
-            ac.turn_off(),
+            switchable_light_1->turn_off(),
+            switchable_light_2->turn_off(),
+            networkable_light->turn_off(),
+            dimmable_light->turn_off(),
+            coffee_maker->turn_off(),
+            ac->turn_off(),
         };
     }
 
-    SwitchableLight  switchable_light_1;
-    SwitchableLight  switchable_light_2;
-    NetworkableLight networkable_light;
-    DimmableLight    dimmable_light;
-    CoffeeMaker      coffee_maker;
-    AirConditioner   ac;
+    std::unique_ptr<SwitchableLight> switchable_light_1;
+    std::unique_ptr<SwitchableLight> switchable_light_2;
+    std::unique_ptr<NetworkableLight> networkable_light;
+    std::unique_ptr<DimmableLight> dimmable_light;
+    std::unique_ptr<CoffeeMaker> coffee_maker;
+    std::unique_ptr<AirConditioner> ac;
 };
