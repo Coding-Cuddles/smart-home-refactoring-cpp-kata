@@ -14,7 +14,7 @@ This kata complements [Clean Code: SOLID, Ep. 13 - Dependency Inversion Principl
 
 In this exercise, you'll practice refactoring code to adhere to the Dependency
 Inversion Principle (DIP). You'll be working with a smart home system that
-controls different types of lights and air conditioner.
+controls different types of lights and an air conditioner.
 
 ## Instructions
 
@@ -37,8 +37,8 @@ Here are some guidelines to follow:
 1. Introduce an interface or several interfaces (or abstract base classes) for
    the devices that the `SmartHomeController` interacts with.
 
-1. Update the `SmartHomeController` class to depend on this interface, instead
-   of the concrete device classes.
+1. Update the `SmartHomeController` class to depend on these abstractions
+   instead of the concrete device classes.
 
 1. Update the devices to implement these interfaces.
 
@@ -51,9 +51,9 @@ Here are some guidelines to follow:
 > and don't account for error cases such as a network connection failure or an
 > attempt to dim a light below 0% or above 100% brightness.
 
-Make sure the program still behaves the same way after your refactoring.
-There's a unit test in place that checks that on a very rudimentary level by
-just looking at the output of the program.
+Make sure the program still behaves the same way after your refactoring. The
+existing tests check this at a rudimentary level by examining the program's
+output.
 
 ### Exercise 2
 
@@ -62,15 +62,15 @@ implementing two additional scenarios (methods) in `SmartHomeController`:
 
 1. Add the `make_quick_breakfast` scenario to open the blinds and make a
    predefined coffee type.
-   1. Add `Blinds` device class with `open` and `close` methods
-      (blinds are always powered and does not have an on/off function).
-   1. Add `make_quick_breakfast` method to `SmartHomeController`.
+   1. Add a `Blinds` device class with `open` and `close` methods
+      (blinds are always powered and do not have an on/off function).
+   1. Add a `make_quick_breakfast` method to `SmartHomeController`.
 
-1. Add automatic vacuum cleaner and the `schedule_night_cleaning` scenario, which
-   should start the cleaning once everything else is turned off.
-   1. Add `VacuumCleaner` device class with `start_cleaning` and `stop_cleaning`
-      methods.
-   1. Add `schedule_night_cleaning` method to `SmartHomeController`. After
+1. Add an automatic vacuum cleaner and the `schedule_night_cleaning` scenario,
+   which should start cleaning once everything else is turned off.
+   1. Add a `VacuumCleaner` device class with `start_cleaning` and
+      `stop_cleaning` methods.
+   1. Add a `schedule_night_cleaning` method to `SmartHomeController`. After
       calling this method, the vacuum cleaner should start cleaning once all
       other devices are turned off.
 
